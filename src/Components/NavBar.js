@@ -3,6 +3,7 @@ import { Box, IconButton, InputBase, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import DataContext from "../AppContext/Context";
 import { Link } from "react-router-dom";
+import logo from "./Images/logo.svg";
 
 export const NavBar = () => {
   const [requestname, setRequestName] = useState();
@@ -10,19 +11,29 @@ export const NavBar = () => {
   //   console.log(setMovieName, name);
 
   return (
-    <div>
+    <Box>
       <Link to="/">
-        <Typography
+        <Box
           sx={{
-            fontSize: { xs: "28px", md: "72px" },
-            textAlign: "center",
-            fontWeight: 800,
-            color: "blueviolet",
-            cursor: "pointer",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          MovieMega
-        </Typography>
+          <Box
+            sx={{
+              cursor: "pointer",
+              width: { xs: "80vw", sm: "40vw", md: "25vw", lg: "24vw" },
+              height: "fit-content",
+            }}
+          >
+            <img
+              src={logo}
+              alt="logo"
+              style={{ background: "black", height: "100%", width: "100%" }}
+            />
+          </Box>
+        </Box>
       </Link>
       <Box
         component="form"
@@ -64,6 +75,6 @@ export const NavBar = () => {
           </IconButton>
         </Box>
       </Box>
-    </div>
+    </Box>
   );
 };

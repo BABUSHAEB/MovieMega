@@ -10,15 +10,12 @@ export const DataState = (props) => {
   const [movieName, setMovieName] = useState("avenger");
   const [movieData, setMovieData] = useState();
   // console.log(`${process.env.REACT_APP_API_KEY}`);
-  const REACT_APP_IMAGEPATH =
-    "https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg";
 
   const options = {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyNTEyNjE1MWNhMzQ5YTE4ZmE5YzYyYmU5ZmQ1M2FiOSIsInN1YiI6IjY0YzBiMmI2ZGY4NmE4MDEyNTgyNDJhMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.kkFjAp0MViGwdN1RGVvXbx_EKdca_CCOa33Ndd1zci4",
+      Authorization: `Bearer ${process.env.REACT_APP_BEARER_TOKEN}`,
     },
   };
 

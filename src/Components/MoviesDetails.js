@@ -1,7 +1,5 @@
 import {
   Box,
-  Button,
-  Card,
   CardContent,
   Chip,
   Grid,
@@ -17,9 +15,9 @@ export const MoviesDetails = () => {
   const { id } = params;
   console.log(params);
 
-  const moviesDetail = async (id) => {
+  const moviesDetail = async (api) => {
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}`
+      `https://api.themoviedb.org/3/movie/${api}?api_key=${process.env.REACT_APP_API_KEY}`
     );
     const data = await response.json();
     setMovieDetail(data);
