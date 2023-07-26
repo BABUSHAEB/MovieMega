@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Box, IconButton, InputBase, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import DataContext from "../AppContext/Context";
+import { Link } from "react-router-dom";
 
 export const NavBar = () => {
   const [requestname, setRequestName] = useState();
@@ -10,20 +11,19 @@ export const NavBar = () => {
 
   return (
     <div>
-      <Typography
-        sx={{
-          fontSize: { xs: "28px", md: "72px" },
-          textAlign: "center",
-          fontWeight: 800,
-          color: "blueviolet",
-          cursor: "pointer",
-        }}
-        onClick={() => {
-          searchMovies();
-        }}
-      >
-        MovieMega
-      </Typography>
+      <Link to="/">
+        <Typography
+          sx={{
+            fontSize: { xs: "28px", md: "72px" },
+            textAlign: "center",
+            fontWeight: 800,
+            color: "blueviolet",
+            cursor: "pointer",
+          }}
+        >
+          MovieMega
+        </Typography>
+      </Link>
       <Box
         component="form"
         sx={{
@@ -40,7 +40,7 @@ export const NavBar = () => {
             justifyContent: "center",
             alignItems: "center",
             width: { xs: 400, md: 800 },
-            bgcolor: "#818e91",
+            bgcolor: "#ebedeb",
             borderRadius: "10px",
           }}
         >
